@@ -27,7 +27,13 @@ export default class App extends Component {
     render() {
         return (
             <div style={{ textAlign: "center" }}>
-                <div style={{ marginTop: "150px" }}>
+                <div
+                    style={{
+                        margin: "100px 200px 0px 200px",
+                        padding: "20px",
+                        border: "black solid 3px"
+                    }}
+                >
                     <div style={{ marginBottom: "50px", fontSize: "50px" }}>
                         Counter {this.state.counter}
                     </div>
@@ -40,7 +46,11 @@ export default class App extends Component {
                         <div>
                             <span
                                 onClick={this.addCounter}
-                                style={{ fontSize: "50px" }}
+                                style={{
+                                    fontSize: "50px",
+                                    border: "dotted black",
+                                    padding: "0 30px"
+                                }}
                             >
                                 +
                             </span>
@@ -48,7 +58,11 @@ export default class App extends Component {
                         <div>
                             <span
                                 onClick={this.subsCounter}
-                                style={{ fontSize: "50px" }}
+                                style={{
+                                    fontSize: "50px",
+                                    border: "dotted black",
+                                    padding: "0 30px"
+                                }}
                             >
                                 -
                             </span>
