@@ -18,7 +18,7 @@ export default class App extends Component {
 
     subsCounter = () => {
         this.state.counter <= 0
-            ? alert("Angka kurang dari 0")
+            ? alert("Counter cannot less than 0")
             : this.setState({
                   counter: this.state.counter - 1
               });
