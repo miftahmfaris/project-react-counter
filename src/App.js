@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            counter: 0
+        };
+    }
+
+    addCounter = () => {
+        this.setState(prevState => ({
+            counter: this.state.counter + 1
+        }));
+    };
+
+    subsCounter = () => {
+        this.state.counter <= 0
+            ? alert("Angka kurang dari 0")
+            : this.setState({
+                  counter: this.state.counter - 1
+              });
+    };
+
+    render() {
+        return (
+            <div style={{ textAlign: "center" }}>
+                <div style={{ marginTop: "150px" }}>
+                    <div style={{ marginBottom: "50px", fontSize: "50px" }}>
+                        Counter {this.state.counter}
+                    </div>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-around"
+                        }}
+                    >
+                        <div>
+                            <span
+                                onClick={this.addCounter}
+                                style={{ fontSize: "50px" }}
+                            >
+                                +
+                            </span>
+                        </div>
+                        <div>
+                            <span
+                                onClick={this.subsCounter}
+                                style={{ fontSize: "50px" }}
+                            >
+                                -
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
-
-export default App;
